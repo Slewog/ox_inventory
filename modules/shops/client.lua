@@ -5,8 +5,10 @@ local shops = {}
 local createBlip = require 'modules.utils.client'.CreateBlip
 
 for shopType, shopData in pairs(data('shops') --[[@as table<string, OxShop>]]) do
+	-- print(json.encode(shopData, {indent = true}))
 	local shop = {
 		name = shopData.name,
+		icon = shopData.icon,
 		groups = shopData.groups or shopData.jobs,
 		blip = shopData.blip,
 		label = shopData.label,
@@ -186,7 +188,7 @@ local function refreshShops()
 						}, {
 							options = {
 								{
-									icon = 'fas fa-shopping-basket',
+									icon = shop.icon or 'fas fa-shopping-basket',
 									label = label,
 									job = shop.groups,
 									action = function()
