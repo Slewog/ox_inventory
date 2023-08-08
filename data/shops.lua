@@ -60,6 +60,7 @@ return {
 
 	YouTool = {
 		name = 'YouTool',
+		icon = 'fa-solid fa-wrench',
 		blip = {
 			id = 402, colour = 69, scale = 0.8
 		}, inventory = {
@@ -74,6 +75,7 @@ return {
 
 	Ammunation = {
 		name = 'Ammunation',
+		icon = 'fa-solid fa-gun',
 		blip = {
 			id = 110, colour = 69, scale = 0.8
 		}, inventory = {
@@ -106,6 +108,7 @@ return {
 
 	PoliceArmoury = {
 		name = 'Police Armoury',
+		icon = 'fa-solid fa-gun',
 		groups = shared.police,
 		blip = {
 			id = 110, colour = 84, scale = 0.8
@@ -126,6 +129,7 @@ return {
 
 	Medicine = {
 		name = 'Medicine Cabinet',
+		icon = 'fa-solid fa-briefcase-medical',
 		groups = {
 			['ambulance'] = 0
 		},
@@ -143,6 +147,7 @@ return {
 
 	BlackMarketArms = {
 		name = 'Black Market (Arms)',
+		icon = 'fa-solid fa-gun',
 		inventory = {
 			{ name = 'WEAPON_DAGGER', price = 5000, metadata = { registered = false	}, currency = 'black_money' },
 			{ name = 'WEAPON_CERAMICPISTOL', price = 50000, metadata = { registered = false }, currency = 'black_money' },
@@ -157,7 +162,8 @@ return {
 	},
 
 	VendingMachineDrinks = {
-		name = 'Vending Machine',
+		name = 'Vending Machine Drink',
+		icon = 'fas fa-glass-whiskey',
 		inventory = {
 			{ name = 'water', price = 10 },
 			{ name = 'cola', price = 10 },
@@ -165,5 +171,16 @@ return {
 		model = {
 			`prop_vend_soda_02`, `prop_vend_fridge01`, `prop_vend_water_01`, `prop_vend_soda_01`
 		}
-	}
+	},
+
+	VendingMachineFoods = {
+		name = 'Vending Machine Food',
+	 	icon = 'fas fa-candy-cane',
+		inventory = {
+			{name = 'burger', price = 10},
+		},
+		model = {
+			`prop_vend_snak_01`, `prop_vend_snak_01_tu`
+		}
+	},
 }
