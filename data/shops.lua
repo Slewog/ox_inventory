@@ -1,8 +1,20 @@
+---wip types
+
+---@class OxShop
+---@field name string
+---@field label? string
+---@field blip? { id: number, colour: number, scale: number }
+---@field inventory { name: string, price: number, count?: number, currency?: string }
+---@field locations? vector3[]
+---@field targets? { loc: vector3, length: number, width: number, heading: number, minZ: number, maxZ: number, distance: number, debug?: boolean, drawSprite?: boolean }[]
+---@field groups? string | string[] | table<string, number>
+---@field model? number[]
+
 return {
 	General = {
 		name = 'Shop',
 		blip = {
-			id = 59, colour = 69, scale = 0.8
+			id = 59, colour = 69, scale = 0.6
 		}, inventory = {
 			{ name = 'burger', price = 10 },
 			{ name = 'water', price = 10 },
@@ -35,7 +47,7 @@ return {
 	Liquor = {
 		name = 'Liquor Store',
 		blip = {
-			id = 93, colour = 69, scale = 0.8
+			id = 93, colour = 69, scale = 0.6
 		}, inventory = {
 			{ name = 'water', price = 10 },
 			{ name = 'cola', price = 10 },
@@ -62,9 +74,13 @@ return {
 		name = 'YouTool',
 		icon = 'fa-solid fa-wrench',
 		blip = {
-			id = 402, colour = 69, scale = 0.8
+			id = 402, colour = 69, scale = 0.6
 		}, inventory = {
-			{ name = 'lockpick', price = 10 }
+			{ name = 'camera', price = 10 },
+			{ name = 'WEAPON_FLASHLIGHT', price = 200 },
+			{ name = 'camera_module', price = 10 },
+			{ name = 'calculator', price = 10 },
+			-- { name = 'umbrella', price = 10 },
 		}, locations = {
 			vec3(2748.0, 3473.0, 55.67),
 			vec3(342.99, -1298.26, 32.51)
@@ -77,9 +93,10 @@ return {
 		name = 'Ammunation',
 		icon = 'fa-solid fa-gun',
 		blip = {
-			id = 110, colour = 69, scale = 0.8
+			id = 110, colour = 69, scale = 0.6
 		}, inventory = {
 			{ name = 'ammo-9', price = 5, },
+			{ name = 'parachute', price = 5, },
 			{ name = 'WEAPON_KNIFE', price = 200 },
 			{ name = 'WEAPON_BAT', price = 100 },
 			{ name = 'WEAPON_PISTOL', price = 1000, metadata = { registered = true }, license = 'weapon' }
@@ -107,13 +124,16 @@ return {
 	},
 
 	PoliceArmoury = {
-		name = 'Police Armoury',
+		name = 'Armurerie SASP',
 		icon = 'fa-solid fa-gun',
 		groups = shared.police,
-		blip = {
-			id = 110, colour = 84, scale = 0.8
-		}, inventory = {
+		-- blip = {
+		-- 	id = 110, colour = 84, scale = 0.5
+		-- },
+		inventory = {
 			{ name = 'ammo-9', price = 5, },
+			{ name = 'armour', price = 5, },
+			{ name = 'WEAPON_RADARGUN', price = 5, },
 			{ name = 'ammo-rifle', price = 5, },
 			{ name = 'WEAPON_FLASHLIGHT', price = 200 },
 			{ name = 'WEAPON_NIGHTSTICK', price = 100 },
@@ -128,13 +148,13 @@ return {
 	},
 
 	Medicine = {
-		name = 'Medicine Cabinet',
+		name = 'LSMC Shop',
 		icon = 'fa-solid fa-briefcase-medical',
-		groups = {
-			['ambulance'] = 0
-		},
+		-- groups = {
+		-- 	['ambulance'] = 0
+		-- },
 		blip = {
-			id = 403, colour = 69, scale = 0.8
+			id = 403, colour = 69, scale = 0.5
 		}, inventory = {
 			{ name = 'medikit', price = 26 },
 			{ name = 'bandage', price = 5 }
@@ -145,24 +165,25 @@ return {
 		}
 	},
 
-	BlackMarketArms = {
-		name = 'Black Market (Arms)',
-		icon = 'fa-solid fa-gun',
-		inventory = {
-			{ name = 'WEAPON_DAGGER', price = 5000, metadata = { registered = false	}, currency = 'black_money' },
-			{ name = 'WEAPON_CERAMICPISTOL', price = 50000, metadata = { registered = false }, currency = 'black_money' },
-			{ name = 'at_suppressor_light', price = 50000, currency = 'black_money' },
-			{ name = 'ammo-rifle', price = 1000, currency = 'black_money' },
-			{ name = 'ammo-rifle2', price = 1000, currency = 'black_money' }
-		}, locations = {
-			vec3(309.09, -913.75, 56.46)
-		}, targets = {
+	-- BlackMarketArms = {
+	-- 	name = 'Black Market (Arms)',
+	-- 	icon = 'fa-solid fa-gun',
+	-- 	inventory = {
+	--      { name = 'lockpick', price = 1000, currency = 'black_money' },
+	-- 		{ name = 'WEAPON_DAGGER', price = 5000, metadata = { registered = false	}, currency = 'black_money' },
+	-- 		{ name = 'WEAPON_CERAMICPISTOL', price = 50000, metadata = { registered = false }, currency = 'black_money' },
+	-- 		{ name = 'at_suppressor_light', price = 50000, currency = 'black_money' },
+	-- 		{ name = 'ammo-rifle', price = 1000, currency = 'black_money' },
+	-- 		{ name = 'ammo-rifle2', price = 1000, currency = 'black_money' }
+	-- 	}, locations = {
+	-- 		vec3(309.09, -913.75, 56.46)
+	-- 	}, targets = {
 
-		}
-	},
+	-- 	}
+	-- },
 
 	VendingMachineDrinks = {
-		name = 'Vending Machine Drink',
+		name = 'Distributeur de boisson',
 		icon = 'fas fa-glass-whiskey',
 		inventory = {
 			{ name = 'water', price = 10 },
@@ -174,7 +195,7 @@ return {
 	},
 
 	VendingMachineFoods = {
-		name = 'Vending Machine Food',
+		name = 'Distributeur de snack',
 	 	icon = 'fas fa-candy-cane',
 		inventory = {
 			{name = 'burger', price = 10},
@@ -183,4 +204,23 @@ return {
 			`prop_vend_snak_01`, `prop_vend_snak_01_tu`
 		}
 	},
+
+	-- VendingMachineCoffee = {
+	-- 	icon = 'fas fa-coffee',
+	-- 	name = 'Machine à cafés',
+	-- 	inventory = {
+	-- 		{name = 'coffee', price = 10},
+	-- 	},
+	-- 	model = {`prop_vend_coffe_01`, `p_ld_coffee_vend_01`
+	-- 	}
+	-- },
+
+	-- VendingMachineCigarett = {
+	-- 	icon = 'fa-solid fa-smoking', -- fa-solid fa-joint
+	-- 	name = 'Distributeur à cigarettes',
+	-- 	inventory = {
+	-- 		{name = 'coffee', price = 10},
+	-- 	},
+	-- 	model = {`prop_vend_fags_01`} -- 73774428
+	-- },
 }
