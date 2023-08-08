@@ -70,6 +70,22 @@ return {
 		}
 	},
 
+	DigitalDen = {
+		name = 'Digital Den',
+		icon = 'fa-solid fa-microchip',
+		blip = {
+			id = 606, colour = 83, scale = 0.6
+		}, inventory = {
+			{ name = 'radio', price = 150 },
+			{ name = 'phone', price = 100 },
+			-- { name = 'boombox', price = 10 },
+		}, locations = {
+			vec3(-1207.8470, -1502.6135, 4.3739)
+		}, targets = {---1208.3591, -1502.8036, 5.3096, 136.7893
+			{ loc = vec3(-1208.9598, -1502.3630, 4.2), length = 0.5, width = 0.5, heading = 128.7723, minZ = 46.4, maxZ = 46.8, distance = 1.5 }
+		}
+	},
+
 	YouTool = {
 		name = 'YouTool',
 		icon = 'fa-solid fa-wrench',
@@ -143,7 +159,8 @@ return {
 		}, locations = {
 			vec3(451.51, -979.44, 30.68)
 		}, targets = {
-			{ loc = vec3(453.21, -980.03, 30.68), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
+			-- { loc = vec3(453.21, -980.03, 30.68), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
+			{ debug = false, loc = vec3(479.75, -996.7, 30.62), length = 0.15, width = 2.2, heading = 270.0, minZ = 30.63, maxZ = 31.94, distance = 2.0  }
 		}
 	},
 
