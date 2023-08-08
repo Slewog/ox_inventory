@@ -12,7 +12,6 @@ return {
 			durability = 0.075,
 			ammoname = 'ammo-9',
 		},
-
 		['WEAPON_ADVANCEDRIFLE'] = {
 			label = 'Advanced Rifle',
 			weight = 3100,
