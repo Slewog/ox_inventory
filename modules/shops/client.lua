@@ -5,7 +5,6 @@ local shops = {}
 local createBlip = require 'modules.utils.client'.CreateBlip
 
 for shopType, shopData in pairs(data('shops') --[[@as table<string, OxShop>]]) do
-	-- print(json.encode(shopData, {indent = true}))
 	local shop = {
 		name = shopData.name,
 		icon = shopData.icon,
