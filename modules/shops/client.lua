@@ -7,6 +7,7 @@ local createBlip = require 'modules.utils.client'.CreateBlip
 for shopType, shopData in pairs(data('shops') --[[@as table<string, OxShop>]]) do
 	local shop = {
 		name = shopData.name,
+		icon = shopData.icon,
 		groups = shopData.groups or shopData.jobs,
 		blip = shopData.blip,
 		label = shopData.label,
@@ -172,7 +173,7 @@ local function refreshShops()
 							zoneId = Utils.CreateBoxZone(target, {
                                 {
                                     name = shopid,
-                                    icon = 'fas fa-shopping-basket',
+                                    icon = shop.icon or 'fas fa-shopping-basket',
                                     label = label,
                                     groups = shop.groups,
                                     onSelect = function()
