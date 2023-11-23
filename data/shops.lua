@@ -2,11 +2,24 @@ return {
 	General = {
 		name = 'Shop',
 		blip = {
-			id = 59, colour = 69, scale = 0.8
+			id = 59, colour = 69, scale = 0.6
 		}, inventory = {
 			{ name = 'burger', price = 10 },
+			{ name = 'bread', price = 10 },
+			{ name = 'noodles', price = 10 },
+			{ name = 'sandwich', price = 10 },
 			{ name = 'water', price = 10 },
 			{ name = 'cola', price = 10 },
+			{ name = 'apple', price = 10 },
+			{ name = 'banana', price = 10 },
+			{ name = 'lighter', price = 5,},
+			{ name = 'key_rings', price = 10 },
+			{ name = 'wallet', price = 10 },
+			{ name = 'yogamat_pro', price = 10 },
+			{ name = 'yogamat_blue', price = 10 },
+			{ name = 'yogamat_black', price = 10 },
+			{ name = 'yogamat_red', price = 10 },
+
 		}, locations = {
 			vec3(25.7, -1347.3, 29.49),
 			vec3(-3038.71, 585.9, 7.9),
@@ -35,11 +48,15 @@ return {
 	Liquor = {
 		name = 'Liquor Store',
 		blip = {
-			id = 93, colour = 69, scale = 0.8
+			id = 93, colour = 69, scale = 0.6
 		}, inventory = {
 			{ name = 'water', price = 10 },
 			{ name = 'cola', price = 10 },
-			{ name = 'burger', price = 15 },
+			{ name = 'lighter', price = 5,},
+			{ name = 'rancho_beer', price = 10 },
+			{ name = 'dusche_beer', price = 10 },
+			{ name = 'stronzo_beer', price = 10 },
+			{ name = 'patriot_beer', price = 10 },
 		}, locations = {
 			vec3(1135.808, -982.281, 46.415),
 			vec3(-1222.915, -906.983, 12.326),
@@ -58,12 +75,36 @@ return {
 		}
 	},
 
+	DigitalDen = {
+		name = 'Digital Den',
+		icon = 'fa-solid fa-microchip',
+		blip = {
+			id = 606, colour = 83, scale = 0.5
+		}, inventory = {
+			{ name = 'radio', price = 150 },
+			{ name = 'phone', price = 100 },
+			{ name = 'powerbank', price = 10 },
+			{ name = 'camera', price = 10 },
+			{ name = 'camera_module', price = 10 },
+			{ name = 'calculator', price = 10 }
+			-- { name = 'boombox', price = 10 },
+		}, locations = {
+			vec3(-658.0402, -857.3788, 24.4900)
+		}, targets = {
+			{ loc = vec3(-657.1, -858.01, 24.49), length = 0.6, width = 2.85, heading = 0, minZ = 23.49, maxZ = 24.89, distance = 1.2 }
+		}
+	},
+
 	YouTool = {
 		name = 'YouTool',
+		icon = 'fa-solid fa-wrench',
 		blip = {
-			id = 402, colour = 69, scale = 0.8
+			id = 402, colour = 69, scale = 0.6
 		}, inventory = {
-			{ name = 'lockpick', price = 10 }
+			{ name = 'WEAPON_FLASHLIGHT', price = 200 },
+			{ name = 'camera', price = 10 },
+			{ name = 'camera_module', price = 10 },
+			-- { name = 'umbrella', price = 10 },
 		}, locations = {
 			vec3(2748.0, 3473.0, 55.67),
 			vec3(342.99, -1298.26, 32.51)
@@ -74,10 +115,13 @@ return {
 
 	Ammunation = {
 		name = 'Ammunation',
+		icon = 'fa-solid fa-gun',
 		blip = {
-			id = 110, colour = 69, scale = 0.8
+			id = 110, colour = 69, scale = 0.6
 		}, inventory = {
 			{ name = 'ammo-9', price = 5, },
+			{ name = 'parachute', price = 5, },
+			{ name = 'WEAPON_FLASHLIGHT', price = 200 },
 			{ name = 'WEAPON_KNIFE', price = 200 },
 			{ name = 'WEAPON_BAT', price = 100 },
 			{ name = 'WEAPON_PISTOL', price = 1000, metadata = { registered = true }, license = 'weapon' }
@@ -105,12 +149,17 @@ return {
 	},
 
 	PoliceArmoury = {
-		name = 'Police Armoury',
+		name = 'Armurerie SASP',
+		icon = 'fa-solid fa-gun',
 		groups = shared.police,
-		blip = {
-			id = 110, colour = 84, scale = 0.8
-		}, inventory = {
+		-- blip = {
+		-- 	id = 110, colour = 84, scale = 0.5
+		-- },
+		inventory = {
 			{ name = 'ammo-9', price = 5, },
+			{ name = 'armour', price = 5, },
+			{ name = 'WEAPON_RADARGUN', price = 5, },
+			{ name = 'metal_wand', price = 5, },
 			{ name = 'ammo-rifle', price = 5, },
 			{ name = 'WEAPON_FLASHLIGHT', price = 200 },
 			{ name = 'WEAPON_NIGHTSTICK', price = 100 },
@@ -120,17 +169,19 @@ return {
 		}, locations = {
 			vec3(451.51, -979.44, 30.68)
 		}, targets = {
-			{ loc = vec3(453.21, -980.03, 30.68), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
+			-- { loc = vec3(453.21, -980.03, 30.68), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
+			{ debug = false, loc = vec3(479.75, -996.7, 30.62), length = 0.15, width = 2.2, heading = 270.0, minZ = 30.63, maxZ = 31.94, distance = 2.0  }
 		}
 	},
 
 	Medicine = {
-		name = 'Medicine Cabinet',
-		groups = {
-			['ambulance'] = 0
-		},
+		name = 'LSMC Shop',
+		icon = 'fa-solid fa-briefcase-medical',
+		-- groups = {
+		-- 	['ambulance'] = 0
+		-- },
 		blip = {
-			id = 403, colour = 69, scale = 0.8
+			id = 403, colour = 69, scale = 0.5
 		}, inventory = {
 			{ name = 'medikit', price = 26 },
 			{ name = 'bandage', price = 5 }
@@ -141,29 +192,90 @@ return {
 		}
 	},
 
-	BlackMarketArms = {
-		name = 'Black Market (Arms)',
-		inventory = {
-			{ name = 'WEAPON_DAGGER', price = 5000, metadata = { registered = false	}, currency = 'black_money' },
-			{ name = 'WEAPON_CERAMICPISTOL', price = 50000, metadata = { registered = false }, currency = 'black_money' },
-			{ name = 'at_suppressor_light', price = 50000, currency = 'black_money' },
-			{ name = 'ammo-rifle', price = 1000, currency = 'black_money' },
-			{ name = 'ammo-rifle2', price = 1000, currency = 'black_money' }
-		}, locations = {
-			vec3(309.09, -913.75, 56.46)
-		}, targets = {
+	-- BlackMarketArms = {
+	-- 	name = 'Black Market (Arms)',
+	-- 	icon = 'fa-solid fa-gun',
+	-- 	inventory = {
+	--      { name = 'lockpick', price = 1000, currency = 'black_money' },
+	-- 		{ name = 'WEAPON_DAGGER', price = 5000, metadata = { registered = false	}, currency = 'black_money' },
+	-- 		{ name = 'WEAPON_CERAMICPISTOL', price = 50000, metadata = { registered = false }, currency = 'black_money' },
+	-- 		{ name = 'at_suppressor_light', price = 50000, currency = 'black_money' },
+	-- 		{ name = 'ammo-rifle', price = 1000, currency = 'black_money' },
+	-- 		{ name = 'ammo-rifle2', price = 1000, currency = 'black_money' }
+	-- 	}, locations = {
+	-- 		vec3(309.09, -913.75, 56.46)
+	-- 	}, targets = {
 
-		}
-	},
+	-- 	}
+	-- },
 
 	VendingMachineDrinks = {
-		name = 'Vending Machine',
+		name = 'Distributeur de boisson',
+		icon = 'fas fa-glass-whiskey',
 		inventory = {
 			{ name = 'water', price = 10 },
 			{ name = 'cola', price = 10 },
+			{ name = 'sprunk', price = 10 },
+			{ name = 'orangotang', price = 10 },
+			{ name = 'ejunk', price = 10 },
+			{ name = '7up_1', price = 10 },
+			{ name = '7up_2', price = 10 },
+			{ name = 'flemon', price = 10 },
+			{ name = 'forange', price = 10 },
+			{ name = 'sprite', price = 10 },
+			{ name = 'dew_1', price = 10 },
+			{ name = 'dew_2', price = 10 },
+			{ name = 'dew_3', price = 10 },
+			{ name = 'monster', price = 10 },
+			{ name = 'pepsi_1', price = 10 },
+			{ name = 'pepsi_2', price = 10 },
+			{ name = 'coke_1', price = 10 },
 		},
 		model = {
-			`prop_vend_soda_02`, `prop_vend_fridge01`, `prop_vend_water_01`, `prop_vend_soda_01`
+			`prop_vend_soda_02`, `prop_vend_water_01`, `prop_vend_soda_01`  -- `prop_vend_fridge01`, 
 		}
-	}
+	},
+
+	VendingMachineFoods = {
+		name = 'Distributeur de snack',
+	 	icon = 'fas fa-candy-cane',
+		inventory = {
+			{name = 'candy', price = 10},
+			{name = 'phatc_rib', price = 10},
+			{name = 'phatc_bch', price = 10},
+			{name = 'doritos', price = 10},
+			{name = 'fritos1', price = 10},
+			{name = 'fritos2', price = 10},
+			{name = 'cheetos1', price = 10},
+			{name = 'cheetos2', price = 10},
+			{name = 'cheetos3', price = 10},
+			{name = 'lays1', price = 10},
+			{name = 'lays2', price = 10},
+			{name = 'lays3', price = 10},
+			{name = 'sunchips1', price = 10},
+			{name = 'sunchips2', price = 10},
+		},
+		model = {
+			`prop_vend_snak_01`, `prop_vend_snak_01_tu`
+		}
+	},
+
+	-- VendingMachineCoffee = {
+	-- 	icon = 'fas fa-coffee',
+	-- 	name = 'Machine à cafés',
+	-- 	inventory = {
+	-- 		{name = 'coffee', price = 10},
+	-- 	},
+	-- 	model = {`prop_vend_coffe_01`, `p_ld_coffee_vend_01`
+	-- 	}
+	-- },
+
+	-- VendingMachineCigarett = {
+	-- 	icon = 'fa-solid fa-smoking', -- fa-solid fa-joint
+	-- 	name = 'Distributeur à cigarettes',
+	-- 	inventory = {
+	-- 		{name = 'coffee', price = 10},
+	-- 	},
+	-- 	model = {`prop_vend_fags_01`} -- 73774428
+	-- },
 }
